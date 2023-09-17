@@ -7,41 +7,38 @@ class HomePage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       body: SafeArea(
-        child: Center(
-            child: Column(children: [
-          Container(
-            color: Colors.amber,
-            padding: const EdgeInsets.all(10.0),
-            child: Row(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                ElevatedButton(
-                    onPressed: () {}, child: const Text("Create Workout")),
-              ],
+        child: Column(
+          children: [
+            Container(
+              color: Colors.amber,
+              padding: const EdgeInsets.all(10.0),
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  ElevatedButton(
+                    onPressed: () {},
+                    child: const Text("Create Workout"),
+                  ),
+                ],
+              ),
             ),
-          ),
-          Container(
-            color: Colors.black,
-            padding: const EdgeInsets.all(10.0),
-            height: 771,
-            alignment: Alignment.topCenter,
-            child: const Row(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                Column(
-                  children: [
-                    Row(
-                      children: [WorkoutCard()],
-                    ),
-                    Row(
-                      children: [WorkoutCard()],
-                    ),
-                  ],
-                )
-              ],
+            Expanded(
+              child: Container(
+                width: MediaQuery.of(context).size.width,
+                color: Colors.black,
+                child: const Padding(
+                  padding: EdgeInsets.symmetric(horizontal: 32.0, vertical: 16.0),
+                  child: Column(
+                    children: [
+                      WorkoutCard(),
+                      WorkoutCard(),
+                    ],
+                  ),
+                ),
+              ),
             ),
-          ),
-        ])),
+          ],
+        ),
       ),
     );
   }
@@ -55,53 +52,33 @@ class WorkoutCard extends StatelessWidget {
     return Card(
       elevation: 0,
       color: Colors.blue,
-      child: SizedBox(
-          width: 350,
-          height: 130,
-          child: Padding(
-            padding: const EdgeInsets.all(6.0),
-            child: Column(
+      child: Padding(
+        padding: const EdgeInsets.all(6.0),
+        child: Column(
+          children: [
+            Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
-                Row(
-                  children: [
-                    const Expanded(
-                      child: Column(
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: [
-                          Text('Workout_Name'),
-                        ],
-                      ),
-                    ),
-                    Flexible(
-                      fit: FlexFit.tight,
-                      child: Column(
-                        crossAxisAlignment: CrossAxisAlignment.end,
-                        children: [
-                          TextButton(
-                              onPressed: () {},
-                              style: TextButton.styleFrom(
-                                  minimumSize: Size.zero,
-                                  padding: EdgeInsets.zero),
-                              child: const Text("Edit"))
-                        ],
-                      ),
-                    ),
-                  ],
-                ),
-                // ROW 2
-                const Row(
-                  children: [Text("Exercise 1, Exercise 2, ...")],
-                ),
-                // ROW 3
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: [
-                    ElevatedButton(onPressed: () {}, child: const Text("Start"))
-                  ],
+                const Text('Workout_Name'),
+                TextButton(
+                  onPressed: () {},
+                  child: const Text("Edit"),
                 )
               ],
             ),
-          )),
+            const SizedBox(height: 5),
+            const Align(
+              alignment: Alignment.centerLeft,
+              child: Text("Exercise 1, Exercise 2, ..."),
+            ),
+            const SizedBox(height: 15),
+            ElevatedButton(
+              onPressed: () {},
+              child: const Text("Start"),
+            ),
+          ],
+        ),
+      ),
     );
   }
 }
