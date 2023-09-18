@@ -27,7 +27,8 @@ class HomePage extends StatelessWidget {
                 width: MediaQuery.of(context).size.width,
                 color: Colors.black,
                 child: const Padding(
-                  padding: EdgeInsets.symmetric(horizontal: 32.0, vertical: 16.0),
+                  padding:
+                      EdgeInsets.symmetric(horizontal: 32.0, vertical: 16.0),
                   child: Column(
                     children: [
                       WorkoutCard(),
@@ -59,11 +60,9 @@ class WorkoutCard extends StatelessWidget {
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
-                const Text('Workout_Name'),
-                TextButton(
-                  onPressed: () {},
-                  child: const Text("Edit"),
-                )
+                const Text('Workout_Name',
+                    style: TextStyle(fontWeight: FontWeight.bold)),
+                IconButton(onPressed: () {}, icon: const Icon(Icons.more_horiz))
               ],
             ),
             const SizedBox(height: 5),
