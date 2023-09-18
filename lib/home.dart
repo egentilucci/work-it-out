@@ -10,14 +10,24 @@ class HomePage extends StatelessWidget {
         child: Column(
           children: [
             Container(
-              color: Colors.amber,
+              color: Colors.grey[800],
               padding: const EdgeInsets.all(10.0),
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
                   ElevatedButton(
                     onPressed: () {},
-                    child: const Text("Create Workout"),
+                    style: ElevatedButton.styleFrom(
+                      backgroundColor: Colors.red[900],
+                      shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(8),
+                      ),
+                    ),
+                    child: const Text(
+                      "Create Workout",
+                      style: TextStyle(
+                          color: Colors.white, fontWeight: FontWeight.bold),
+                    ),
                   ),
                 ],
               ),
@@ -31,6 +41,10 @@ class HomePage extends StatelessWidget {
                       EdgeInsets.symmetric(horizontal: 32.0, vertical: 16.0),
                   child: Column(
                     children: [
+                      Text(
+                        "My Workouts",
+                        style: TextStyle(color: Colors.white),
+                      ),
                       WorkoutCard(),
                       WorkoutCard(),
                     ],
@@ -52,7 +66,7 @@ class WorkoutCard extends StatelessWidget {
   Widget build(BuildContext context) {
     return Card(
       elevation: 0,
-      color: Colors.blue,
+      color: Colors.grey[800],
       child: Padding(
         padding: const EdgeInsets.all(6.0),
         child: Column(
@@ -61,19 +75,37 @@ class WorkoutCard extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
                 const Text('Workout_Name',
-                    style: TextStyle(fontWeight: FontWeight.bold)),
-                IconButton(onPressed: () {}, icon: const Icon(Icons.more_horiz))
+                    style: TextStyle(
+                        fontWeight: FontWeight.bold, color: Colors.white)),
+                IconButton(
+                  onPressed: () {},
+                  icon: const Icon(Icons.more_horiz),
+                  color: Colors.white,
+                )
               ],
             ),
             const SizedBox(height: 5),
             const Align(
               alignment: Alignment.centerLeft,
-              child: Text("Exercise 1, Exercise 2, ..."),
+              child: Text(
+                "Exercise 1, Exercise 2, ...",
+                style: TextStyle(color: Colors.white),
+              ),
             ),
             const SizedBox(height: 15),
             ElevatedButton(
               onPressed: () {},
-              child: const Text("Start"),
+              style: ElevatedButton.styleFrom(
+                backgroundColor: Colors.red[900],
+                shape: RoundedRectangleBorder(
+                  borderRadius: BorderRadius.circular(8),
+                ),
+              ),
+              child: const Text(
+                "Start",
+                style:
+                    TextStyle(color: Colors.white, fontWeight: FontWeight.bold),
+              ),
             ),
           ],
         ),
