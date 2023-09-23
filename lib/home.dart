@@ -8,56 +8,49 @@ class HomePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: SafeArea(
-        child: Column(
-          children: [
-            Container(
-              color: Colors.grey[800],
-              padding: const EdgeInsets.all(10.0),
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  ElevatedButton(
-                    onPressed: () {},
-                    style: ElevatedButton.styleFrom(
-                      backgroundColor: Colors.red[900],
-                      shape: RoundedRectangleBorder(
-                        borderRadius: BorderRadius.circular(8),
-                      ),
-                    ),
-                    child: const Text(
-                      "Create Workout",
-                      style: TextStyle(
-                        color: Colors.white,
-                        fontWeight: FontWeight.bold,
-                      ),
-                    ),
-                  ),
-                ],
-              ),
+      appBar: AppBar(
+        centerTitle: true,
+        backgroundColor: Colors.grey[800],
+        title: ElevatedButton(
+          onPressed: () {},
+          style: ElevatedButton.styleFrom(
+            backgroundColor: Colors.red[900],
+            shape: RoundedRectangleBorder(
+              borderRadius: BorderRadius.circular(8),
             ),
-            Expanded(
-              child: Container(
-                width: MediaQuery.of(context).size.width,
-                color: Colors.black,
-                child: const Padding(
-                  padding: EdgeInsets.symmetric(horizontal: 32.0, vertical: 16.0),
-                  child: Column(
-                    children: [
-                      Text(
-                        "My Workouts",
-                        style: TextStyle(
-                          color: Colors.white,
-                        ),
-                      ),
-                      WorkoutCard(),
-                      WorkoutCard(),
-                    ],
-                  ),
+          ),
+          child: const Text(
+            "Create Workout",
+            style: TextStyle(
+              color: Colors.white,
+              fontWeight: FontWeight.bold,
+            ),
+          ),
+        ),
+      ),
+      body: SafeArea(
+        child: Container(
+          color: Colors.black,
+          child: Column(
+            children: [
+              const Text(
+                "My Workouts",
+                style: TextStyle(
+                  color: Colors.white,
                 ),
               ),
-            ),
-          ],
+              Expanded(
+                child: ListView(
+                  padding: const EdgeInsets.all(8),
+                  children: const <Widget>[
+                    WorkoutCard(),
+                    WorkoutCard(),
+                    WorkoutCard(),
+                  ],
+                ),
+              )
+            ],
+          ),
         ),
       ),
     );
