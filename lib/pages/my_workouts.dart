@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
+import 'package:work_it_out/router.dart';
 import 'package:work_it_out/widgets/workout_card.dart';
 
 class MyWorkoutsPage extends StatelessWidget {
@@ -11,7 +13,9 @@ class MyWorkoutsPage extends StatelessWidget {
         centerTitle: true,
         backgroundColor: Colors.grey[800],
         title: ElevatedButton(
-          onPressed: () {},
+          onPressed: () {
+            context.go(AppRoutes.createWorkout);
+          },
           style: ElevatedButton.styleFrom(
             backgroundColor: Colors.red[900],
             shape: RoundedRectangleBorder(
