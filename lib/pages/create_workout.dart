@@ -9,43 +9,29 @@ class CreateWorkoutPage extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         centerTitle: true,
-        backgroundColor: Colors.grey[800],
         title: const Text(
           "Create Workout",
-          style: TextStyle(
-            color: Colors.white,
-            fontWeight: FontWeight.bold,
-          ),
+          textScaleFactor: 0.75,
         ),
         automaticallyImplyLeading: false,
         leadingWidth: 112.0,
         leading: TextButton(
-          child: Text(
+          child: const Text(
             "Cancel",
-            style: TextStyle(
-              color: Colors.red[900],
-              fontWeight: FontWeight.bold,
-            ),
           ),
           onPressed: () => context.pop(),
         ),
         actions: [
           TextButton(
-            child: Text(
+            child: const Text(
               "Save",
-              style: TextStyle(
-                color: Colors.red[900],
-                fontWeight: FontWeight.bold,
-              ),
             ),
             onPressed: () => context.pop(),
           ),
         ],
       ),
       body: SafeArea(
-        child: Container(
-          color: Colors.black,
-        ),
+        child: Container(),
       ),
     );
   }

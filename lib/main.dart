@@ -14,7 +14,10 @@ class MyApp extends StatelessWidget {
     return MaterialApp.router(
       title: 'Work it out',
       theme: ThemeData(
-        colorScheme: ColorScheme.fromSeed(seedColor: Colors.lightBlue),
+        colorScheme: ColorScheme.fromSeed(
+          seedColor: const Color(0x00003258),
+          brightness: Brightness.dark,
+        ),
         useMaterial3: true,
       ),
       routerConfig: router,

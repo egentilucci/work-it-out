@@ -11,36 +11,26 @@ class MyWorkoutsPage extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         centerTitle: true,
-        backgroundColor: Colors.grey[800],
         title: ElevatedButton(
           onPressed: () {
             context.go(AppRoutes.createWorkout);
           },
           style: ElevatedButton.styleFrom(
-            backgroundColor: Colors.red[900],
             shape: RoundedRectangleBorder(
               borderRadius: BorderRadius.circular(8),
             ),
           ),
           child: const Text(
             "Create Workout",
-            style: TextStyle(
-              color: Colors.white,
-              fontWeight: FontWeight.bold,
-            ),
           ),
         ),
       ),
       body: SafeArea(
         child: Container(
-          color: Colors.black,
           child: Column(
             children: [
               const Text(
                 "My Workouts",
-                style: TextStyle(
-                  color: Colors.white,
-                ),
               ),
               Expanded(
                 child: ListView(
