@@ -1,9 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:work_it_out/widgets/workout_card.dart';
 
-import 'widgets/workout_card.dart';
-
-class HomePage extends StatelessWidget {
-  const HomePage({super.key});
+class MyWorkoutsPage extends StatelessWidget {
+  const MyWorkoutsPage({super.key});
 
   @override
   Widget build(BuildContext context) {
