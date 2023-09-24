@@ -26,24 +26,22 @@ class MyWorkoutsPage extends StatelessWidget {
         ),
       ),
       body: SafeArea(
-        child: Container(
-          child: Column(
-            children: [
-              const Text(
-                "My Workouts",
+        child: Column(
+          children: [
+            const Text(
+              "My Workouts",
+            ),
+            Expanded(
+              child: ListView(
+                padding: const EdgeInsets.all(8),
+                children: const <Widget>[
+                  WorkoutCard(),
+                  WorkoutCard(),
+                  WorkoutCard(),
+                ],
               ),
-              Expanded(
-                child: ListView(
-                  padding: const EdgeInsets.all(8),
-                  children: const <Widget>[
-                    WorkoutCard(),
-                    WorkoutCard(),
-                    WorkoutCard(),
-                  ],
-                ),
-              )
-            ],
-          ),
+            )
+          ],
         ),
       ),
     );

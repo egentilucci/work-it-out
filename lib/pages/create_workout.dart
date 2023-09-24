@@ -13,20 +13,11 @@ class CreateWorkoutPage extends StatelessWidget {
           "Create Workout",
           textScaleFactor: 0.75,
         ),
-        automaticallyImplyLeading: false,
-        leadingWidth: 112.0,
-        leading: TextButton(
-          child: const Text(
-            "Cancel",
-          ),
-          onPressed: () => context.pop(),
-        ),
         actions: [
-          TextButton(
-            child: const Text(
-              "Save",
-            ),
+          IconButton(
+            icon: const Icon(Icons.save),
             onPressed: () => context.pop(),
+            tooltip: "Save",
           ),
         ],
       ),

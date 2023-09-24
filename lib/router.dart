@@ -8,7 +8,7 @@ import 'package:work_it_out/pages/not_found.dart';
 class AppRoutes {
   static const String home = '/';
   static const String myWorkouts = '/my_workouts';
-  static const String createWorkout = '/my_workouts/create_workout';
+  static const String createWorkout = '$myWorkouts/create_workout';
 }
 
 // GoRouter configuration
